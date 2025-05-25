@@ -59,6 +59,11 @@ def RandomResize(with_weights=False):
     else:
         return random.choice(cv_resize_flags)
 
+def SimOTM(img):
+    blur = cv2.blur(img, (3, 3))
+    rec = receptiveField(img)
+    result = cv2.merge([img, blur, rec])
+    return result
 
 
 def OneToThree(img):
@@ -1593,7 +1598,7 @@ def load_image(self, index):
         path = self.img_files[index]
         img = cv2.imread(path)  # BGR
         # img = cv2.imread(path, cv2.IMREAD_GRAYSCALE)  # GRAY
-        # img = OneToThree2(img)
+        # img = SimOTM(img)
         # img = OneToThreeCLAHE(img)
         # img = receptiveField(im)
         # img = OneToThreeEqualizeHist(img)

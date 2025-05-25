@@ -52,6 +52,41 @@ python val.py
 ---
 
 
+## Quick Start Guide YOLOv7
+
+### 1. Clone the Project
+
+```bash
+git clone https://github.com/WongKinYiu/yolov7.git 
+cd yolov7
+```
+
+### 2. Modify the file
+- (1) Replace base.py under YOLOv11 with datasets.py of this project. (utils/datasets.py)
+- (2) Specify the load_image  (use SimOTM)
+
+### 3. Prepare the Dataset
+Configure your dataset directory or TXT file .
+
+### 4. Install Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 5. Run the Program
+```bash
+python train.py  
+```
+
+### 6. Testing
+Run the test script to verify if the data loading is correct:
+```bash
+python val.py
+```
+
+---
+
+
 ## Implemented in  C++ or CUDA
 For specific implementation, please refer to Function.cpp. 
 
